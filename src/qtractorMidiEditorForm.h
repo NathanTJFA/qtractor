@@ -160,6 +160,8 @@ protected slots:
 	void viewToolbarTime(bool bOn);
 	void viewToolbarScale(bool bOn);
 	void viewToolbarThumb(bool bOn);
+	void viewToolbarEditEvent(bool bOn);
+	void viewToolbarEditView(bool bOn);
 	void viewToolbarLocked(bool bOn);
 	void viewEvents(bool bOn);
 	void viewNoteNames(bool bOn);

@@ -551,6 +551,12 @@ qtractorMidiEditorForm::qtractorMidiEditorForm (
 	QObject::connect(m_ui.viewToolbarThumbAction,
 		SIGNAL(triggered(bool)),
 		SLOT(viewToolbarThumb(bool)));
+	QObject::connect(m_ui.viewToolbarEditEventAction,
+		SIGNAL(triggered(bool)),
+		SLOT(viewToolbarEditEvent(bool)));
+	QObject::connect(m_ui.viewToolbarEditViewAction,
+		SIGNAL(triggered(bool)),
+		SLOT(viewToolbarEditView(bool)));
 	QObject::connect(m_ui.viewToolbarLockedAction,
 		SIGNAL(triggered(bool)),
 		SLOT(viewToolbarLocked(bool)));
@@ -710,6 +716,8 @@ qtractorMidiEditorForm::qtractorMidiEditorForm (
 		m_ui.viewToolbarTimeAction->setChecked(pOptions->bMidiTimeToolbar);
 		m_ui.viewToolbarScaleAction->setChecked(pOptions->bMidiScaleToolbar);
 		m_ui.viewToolbarThumbAction->setChecked(pOptions->bMidiThumbToolbar);
+		m_ui.viewToolbarEditEventAction->setChecked(pOptions->bMidiEditEventToolbar);
+		m_ui.viewToolbarEditViewAction->setChecked(pOptions->bMidiEditViewToolbar);
 		m_ui.viewToolbarLockedAction->setChecked(pOptions->bMidiLockedToolbar);
 		m_ui.viewNoteNamesAction->setChecked(pOptions->bMidiNoteNames);
 		m_ui.viewNoteDurationAction->setChecked(pOptions->bMidiNoteDuration);
@@ -740,6 +748,8 @@ qtractorMidiEditorForm::qtractorMidiEditorForm (
 		viewToolbarTime(pOptions->bMidiTimeToolbar);
 		viewToolbarScale(pOptions->bMidiScaleToolbar);
 		viewToolbarThumb(pOptions->bMidiThumbToolbar);
+		viewToolbarEditEvent(pOptions->bMidiEditEventToolbar);
+		viewToolbarEditView(pOptions->bMidiEditViewToolbar);
 		viewToolbarLocked(pOptions->bMidiLockedToolbar);
 		m_pMidiEditor->setZoomMode(pOptions->iMidiZoomMode);
 		m_pMidiEditor->setHorizontalZoom(pOptions->iMidiHorizontalZoom);
@@ -960,6 +970,9 @@ void qtractorMidiEditorForm::closeEvent ( QCloseEvent *pCloseEvent )
 		pOptions->bMidiTransportToolbar = m_ui.transportToolbar->isVisible();
 		pOptions->bMidiTimeToolbar = m_ui.timeToolbar->isVisible();
 		pOptions->bMidiScaleToolbar = m_ui.snapToScaleToolbar->isVisible();
+		pOptions->bMidiThumbToolbar = m_ui.thumbViewToolbar->isVisible();
+		pOptions->bMidiEditEventToolbar = m_ui.editEventToolbar->isVisible();
+		pOptions->bMidiEditViewToolbar = m_ui.editViewToolbar->isVisible();
 		pOptions->bMidiLockedToolbar = m_ui.viewToolbarLockedAction->isChecked();
 		pOptions->iMidiZoomMode = m_pMidiEditor->zoomMode();
 		pOptions->iMidiHorizontalZoom = m_pMidiEditor->horizontalZoom();
@@ -1827,6 +1840,20 @@ void qtractorMidiEditorForm::viewToolbarScale ( bool bOn )
 void qtractorMidiEditorForm::viewToolbarThumb ( bool bOn )
 {
 	m_ui.thumbViewToolbar->setVisible(bOn);
+}
+
+
+// Show/hide the edit-event toolbar.
+void qtractorMidiEditorForm::viewToolbarEditEvent ( bool bOn )
+{
+	m_ui.editEventToolbar->setVisible(bOn);
+}
+
+
+// Show/hide the edit-view toolbar.
+void qtractorMidiEditorForm::viewToolbarEditView ( bool bOn )
+{
+	m_ui.editViewToolbar->setVisible(bOn);
 }
 
 

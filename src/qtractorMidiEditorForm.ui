@@ -96,6 +96,8 @@
      <addaction name="viewToolbarTimeAction"/>
      <addaction name="viewToolbarScaleAction"/>
      <addaction name="viewToolbarThumbAction"/>
+     <addaction name="viewToolbarEditEventAction"/>
+     <addaction name="viewToolbarEditViewAction"/>
      <addaction name="separator"/>
      <addaction name="viewToolbarLockedAction"/>
     </widget>
@@ -1208,6 +1210,40 @@
    <property name="statusTip">
     <string>Show/hide the thumb view toolbar</string>
    </property>
+  </action>
+  <action name="viewToolbarEditEventAction">
+    <property name="checkable">
+      <bool>true</bool>
+    </property>
+    <property name="text">
+      <string>Edit Eve&amp;nt</string>
+    </property>
+    <property name="iconText">
+      <string>Edit Event Toolbar</string>
+    </property>
+    <property name="toolTip">
+      <string>Edit event toolbar</string>
+    </property>
+    <property name="statusTip">
+      <string>Show/hide the edit event toolbar</string>
+    </property>
+  </action>
+  <action name="viewToolbarEditViewAction">
+    <property name="checkable">
+      <bool>true</bool>
+    </property>
+    <property name="text">
+      <string>Edit Vie&amp;w</string>
+    </property>
+    <property name="iconText">
+      <string>Edit View Toolbar</string>
+    </property>
+    <property name="toolTip">
+      <string>Edit view toolbar</string>
+    </property>
+    <property name="statusTip">
+      <string>Show/hide the edit view toolbar</string>
+    </property>
   </action>
   <action name="viewToolbarLockedAction">
     <property name="checkable">

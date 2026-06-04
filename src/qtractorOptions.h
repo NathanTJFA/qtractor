@@ -311,6 +311,8 @@ public:
 	bool bMidiTimeToolbar;
 	bool bMidiScaleToolbar;
 	bool bMidiThumbToolbar;
+	bool bMidiEditEventToolbar;
+	bool bMidiEditViewToolbar;
 	bool bMidiLockedToolbar;
 	int  iMidiDisplayFormat;
 	bool bMidiNoteNames;
